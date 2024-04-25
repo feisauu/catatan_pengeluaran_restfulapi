@@ -1,8 +1,25 @@
 @extends('layouts.main')
 
-
 @section('container')
     
+<style>
+    body {
+        background: linear-gradient(to bottom, #87CEEB, #4682B4);
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-registration {
+        background-color: white;
+        border-radius: 30px;
+        padding: 50px;
+    }
+</style>
+
 <div class="row justify-content-center">
     <div class="col-lg-6">
         <main class="form-registration w-100 m-auto">
@@ -10,16 +27,7 @@
             <form action="/register" method="post">
                 @csrf
                 <div class="form-floating">
-                    {{-- <input type="text" name="name" class="form-control rounded-top @error('name') is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
-                    <label for="name">Name</label>
-                    @error('name')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror --}}
-                </div>
-                <div class="form-floating">
-                    <input type="text" name="username" class="form-control @error('name') is-invalid @enderror" id="username" placeholder="username" required value="{{ old('username') }}">
+                    <input type="text" name="username" class="form-control @error('name') is-invalid @enderror" id="username" placeholder="Username" required value="{{ old('username') }}">
                     <label for="username">Username</label>
                     @error('username')
                         <div class="invalid-feedback">
@@ -28,7 +36,7 @@
                     @enderror
                 </div>
                 <div class="form-floating">
-                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="name" required value="{{ old('name') }}">
+                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" required value="{{ old('name') }}">
                     <label for="name">Name</label>
                     @error('name')
                         <div class="invalid-feedback">
