@@ -1,0 +1,82 @@
+### REGISTER USER API
+POST http://localhost:8000/api/users
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username" : "berlin",
+    "email" : "berlin@gmail.com",
+    "password" : "berlin",
+    "name" : "berlin"   
+}
+
+### LOGIN USER API
+POST http://localhost:8000/api/users/login
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username" : "berlin",
+    "password" : "berlin"
+}
+
+### GET CURRENT USER API
+GET http://localhost:8000/api/users/getupdate
+Authorization: 0ef784ed-ec4e-4948-97c8-253e122a82d5
+Accept: application/json
+
+### UPDATE CURRENT USER API
+PATCH http://localhost:8000/api/users/getupdate
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Content-Type: application/json
+Accept: application/json
+
+{
+    "name" : "berlin"
+}
+
+### GET CURRENT EXPENSES
+GET http://localhost:8000/api/expenses
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Accept: application/json
+
+### POST CURRENT EXPENSES
+POST http://localhost:8000/api/expenses
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Content-Type: application/json
+Accept: application/json
+
+{
+  "type": "aku aku",
+  "amount": 101,
+  "description": "iya",
+  "expense_date": "2024-04-20"
+}
+
+### UPDATE PENGELUARAN
+PUT http://localhost:8000/api/expenses/20
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Content-Type: application/json
+Accept: application/json
+
+{ 
+    "type": "TIPE",
+    "amount": 111,
+    "description": "expense_description_here",
+    "expense_date": "2024-04-20"
+}
+
+### HAPUS PENGELUARAN
+DELETE http://localhost:8000/api/expenses/20
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Accept: application/json
+
+### FILTER TANGGAL PENGELUARAN
+GET http://localhost:8000/api/expenses/filter?start_date=2024-04-01&end_date=2024-04-30
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Accept: application/json
+
+### LOGOUT USER API
+DELETE http://localhost:8000/api/users/logout
+Authorization: 53723a65-7e5c-4e05-8c06-655b415598c2
+Accept: application/json
